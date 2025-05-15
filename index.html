@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Animation</title>
+  <title>Happy Birthday!!</title>
   <style>
     body {
       margin: 0;
@@ -72,7 +72,7 @@
   </style>
 </head>
 <body>
-  <div id="message">Happy Birthday!</div>
+  <div id="message">Happy Birthday!<br>遅れちゃってごめんね...</div>
   <div id="cakeContainer">
     <img id="cake" src="cake.png" alt="ケーキ">
     <img id="candle-left" class="candle" src="candle.png" alt="左のろうそく">
@@ -124,10 +124,6 @@
       gsap.to("#candle-center", { opacity: 1, duration: 0.5, delay: 4.2 });
       gsap.to("#candle-right", { opacity: 1, duration: 0.5, delay: 4.4 });
 
-      // 最後にメッセージがフェードアウト
-      setTimeout(() => {
-        gsap.to("#message", { opacity: 0, duration: 2, delay: 6 });
-      }, 8000);
     }
   </script>
 </body>
