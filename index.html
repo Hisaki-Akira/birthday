@@ -70,6 +70,46 @@
       object-fit: contain;
     }
   </style>
+  <audio id="bgm" autoplay loop>
+  <source src="music.m4a" type="audio/mp4">
+  お使いのブラウザは audio 要素をサポートしていません。
+</audio>
+
+<button id="playButton" onclick="playAudio()">🎵</button>
+
+<style>
+  #playButton {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1000;
+    display: none; /* 初期は非表示 */
+  }
+</style>
+
+<script>
+  const bgm = document.getElementById('bgm');
+  const playButton = document.getElementById('playButton');
+
+  // 自動再生を試みる
+  bgm.play().catch(() => {
+    // 自動再生失敗時に再生ボタンを表示
+    playButton.style.display = 'inline';
+  });
+
+  // ボタンクリックで再生＆非表示に
+  function playAudio() {
+    bgm.play();
+    playButton.style.display = 'none';
+  }
+</script>
+
 </head>
 <body>
   <div id="message">Happy Birthday!<br>遅れちゃってごめんね...</div>
